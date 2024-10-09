@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Uncial Antiqua", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(236, 23, 23);
+
+            >ul {
+                width: 500px;
+                position: fixed;
+                top: 0;
+                right: 0;
+
+                >li {
+                    list-style-type: none;
+                    width: 100%;
+                    height: 130px;
+                    color: white;
+
+                    border-bottom: 2px solid rgba(255, 255, 255, 0.481);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    transition: 1s;
+                    text-shadow: 10px 10px 20px black;
+                }
+            }
+
+            >figure {
+                width: 60%;
+                height: 100vh;
+                position: relative;
+
+                >img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                >figcaption {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            border: 3px solid white;
+            border-radius: 50%;
+            position: fixed;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="circle"></div>
+        <ul>
+            <li>Start the game</li>
+            <li>Online PLay</li>
+            <li>Gems and Coins</li>
+            <li>Legendary Cup 2024</li>
+            <li>Setting</li>
+        </ul>
+        <figure>
+            <img src="img/anime-girl-red-eye-.jpg" alt="">
+            <figcaption>Coded by: <br>
+                Kosar Akbarshah</figcaption>
+        </figure>
+    </main>
+
+    <script>
+        const circle = document.querySelector('.circle')
+        const li = document.querySelectorAll('ul>li')
+
+
+        window.addEventListener('mousemove', (e) => {
+            circle.style.top = e.clientY + 'px'
+            circle.style.left = e.clientX + 'px'
+
+        })
+        li.forEach((val, i) => {
+            val.addEventListener('mouseenter', () => {
+                circle.style.background = 'rgba(0, 0, 0, 0.475)'
+                circle.style.scale = '1.4'
+
+                li.forEach((item, index) => {
+                    if (index == i) {
+                        item.style.opacity = '1';
+                        item.style.visibility = 'visible';  // Show hovered item
+                    } else {
+                        item.style.opacity = '0.2';
+                        item.style.visibility = 'visible';  // Hide others
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            if (item.style.opacity = '0') {
+                                item.style.visibility = 'hidden';
+                            }
+                        }, 100);
+                    }
+
+                })
+
+            })
+            val.addEventListener('mouseleave', () => {
+                circle.style.background = 'none'
+                circle.style.scale = '1'
+
+                // Reset all list items to full width
+                li.forEach((item) => {
+                    item.style.opacity = '1';
+                    item.style.visibility = 'visible';
+
+                })
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
