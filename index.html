@@ -23,6 +23,7 @@
             height: 100vh;
             background-color: rgb(236, 23, 23);
 
+
             >ul {
                 width: 500px;
                 position: fixed;
@@ -58,7 +59,7 @@
                 }
 
                 >figcaption {
-                    position: absolute;
+                    position: fixed;
                     bottom: 0;
                     left: 0;
                     color: white;
@@ -73,7 +74,9 @@
             border: 3px solid white;
             border-radius: 50%;
             position: fixed;
-            z-index: 900;
+
+
+
 
 
         }
@@ -95,6 +98,7 @@
             <figcaption>Coded by: <br>
                 Kosar Akbarshah</figcaption>
         </figure>
+
     </main>
 
     <script>
@@ -124,7 +128,7 @@
                             if (item.style.opacity = '0') {
                                 item.style.visibility = 'hidden';
                             }
-                        }, 100);
+                        },);
                     }
 
                 })
@@ -138,7 +142,7 @@
                 li.forEach((item) => {
                     item.style.opacity = '1';
                     item.style.visibility = 'visible';
-
+                    item.style.width = '100%';
                 })
             })
         })
