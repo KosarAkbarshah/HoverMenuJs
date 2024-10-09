@@ -74,10 +74,60 @@
             border: 3px solid white;
             border-radius: 50%;
             position: fixed;
+        }
+
+        /* Responsive styles for mobile */
 
 
+        @media(max-width: 1024px) {
+            main {
+                flex-direction: column;
+
+                >figure {
+                    width: 100%;
+                    height: 50vh;
+
+                    >figcaption {
+
+                        figcaption {
+                            position: static;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                >ul {
+                    width: 100%;
+                    position: relative;
+                    top: auto;
+                    right: auto;
+
+                    >li {
+                        font-size: 24px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
+            main {
 
 
+                figure {
+                    width: 70%;
+                }
+
+                >ul {
+                    width: 30%;
+                }
+
+                >li {
+                    font-size: 30px;
+                    height: 150px;
+                }
+            }
 
         }
     </style>
@@ -123,12 +173,12 @@
                     } else {
                         item.style.opacity = '0.2';
                         item.style.visibility = 'visible';  // Hide others
-                        item.style.opacity = '0';
-                        setTimeout(() => {
-                            if (item.style.opacity = '0') {
-                                item.style.visibility = 'hidden';
-                            }
-                        },);
+                        // item.style.opacity = '0';
+                        // setTimeout(() => {
+                        //     if (item.style.opacity = '0') {
+                        //         item.style.visibility = 'hidden';
+                        //     }
+                        // },);
                     }
 
                 })
